@@ -23,6 +23,9 @@
       <entry key="notification-scheduler">
         <State />
       </entry>
+      <entry key="test">
+        <State />
+      </entry>
     </value>
   </component>
 </project>
