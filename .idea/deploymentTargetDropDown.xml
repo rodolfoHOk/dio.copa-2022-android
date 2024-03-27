@@ -5,6 +5,24 @@
       <entry key="app">
         <State />
       </entry>
+      <entry key="data">
+        <State />
+      </entry>
+      <entry key="data.data">
+        <State />
+      </entry>
+      <entry key="data.local">
+        <State />
+      </entry>
+      <entry key="data.remote">
+        <State />
+      </entry>
+      <entry key="domain">
+        <State />
+      </entry>
+      <entry key="notification-scheduler">
+        <State />
+      </entry>
     </value>
   </component>
 </project>

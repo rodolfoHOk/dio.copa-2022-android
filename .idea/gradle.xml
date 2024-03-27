@@ -9,6 +9,12 @@
           <set>
             <option value="$USER_HOME$/Documentos/ti/dio/Copa2022AndroidApp" />
             <option value="$USER_HOME$/Documentos/ti/dio/Copa2022AndroidApp/app" />
+            <option value="$USER_HOME$/Documentos/ti/dio/Copa2022AndroidApp/data" />
+            <option value="$USER_HOME$/Documentos/ti/dio/Copa2022AndroidApp/data/data" />
+            <option value="$USER_HOME$/Documentos/ti/dio/Copa2022AndroidApp/data/local" />
+            <option value="$USER_HOME$/Documentos/ti/dio/Copa2022AndroidApp/data/remote" />
+            <option value="$USER_HOME$/Documentos/ti/dio/Copa2022AndroidApp/domain" />
+            <option value="$USER_HOME$/Documentos/ti/dio/Copa2022AndroidApp/notification-scheduler" />
           </set>
         </option>
         <option name="resolveExternalAnnotations" value="false" />
