@@ -6,8 +6,9 @@ import kotlinx.coroutines.flow.flowOf
 import me.dio.android.copa2022app.data.data.source.MatchesDataSource
 import me.dio.android.copa2022app.domain.models.Match
 import me.dio.android.copa2022app.domain.repositories.MatchesRepository
+import javax.inject.Inject
 
-class MatchesRepositoryImpl(
+class MatchesRepositoryImpl @Inject constructor(
     private val localDataSource: MatchesDataSource.Local,
     private val remoteDataSource: MatchesDataSource.Remote,
 ) : MatchesRepository {
