@@ -1,7 +1,6 @@
 package me.dio.android.copa2022app.features
 
 import android.os.Bundle
-import android.util.Log
 import androidx.activity.ComponentActivity
 import androidx.activity.compose.setContent
 import androidx.activity.viewModels
@@ -20,7 +19,7 @@ class MainActivity : ComponentActivity() {
         setContent {
             Copa2022AppTheme {
                 val state by viewModel.state.collectAsState()
-                Log.e("TAG", "onCreate: ${state.matches}")
+                MainScreen(state.matches)
             }
         }
     }
