@@ -1,8 +1,14 @@
 package me.dio.android.copa2022app.features
 
-sealed class MainUiAction {
+import me.dio.android.copa2022app.domain.models.MatchDomain
 
-    data class MatchesNotFound(val message: String) : MainUiAction()
+sealed interface MainUiAction {
 
-    data object Unexpected : MainUiAction()
+    data class MatchesNotFound(val message: String) : MainUiAction
+
+    data object Unexpected : MainUiAction
+
+    data class EnableNotification(val match: MatchDomain) : MainUiAction
+
+    data class DisableNotification(val match: MatchDomain) : MainUiAction
 }

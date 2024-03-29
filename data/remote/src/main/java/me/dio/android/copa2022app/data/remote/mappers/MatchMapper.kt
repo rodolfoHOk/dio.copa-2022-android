@@ -22,6 +22,7 @@ fun MatchRemote.toDomain(): MatchDomain {
         team2 = team2.toTeam(),
         stadium = stadium.toDomain(),
         date = date.toLocalDateTime(),
+//        date = LocalDateTime.now().plusMinutes(6), // for test
     )
 }
 
