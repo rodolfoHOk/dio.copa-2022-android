@@ -46,8 +46,8 @@ class NotificationMatchesWorker(
             WorkManager.getInstance(context)
                 .enqueueUniqueWork(
                     id,
-                    ExistingWorkPolicy.KEEP,
-//                    ExistingWorkPolicy.REPLACE, // for test
+//                    ExistingWorkPolicy.KEEP,
+                    ExistingWorkPolicy.REPLACE, // for test
                     createRequest(initialDelay, inputData)
                 )
         }

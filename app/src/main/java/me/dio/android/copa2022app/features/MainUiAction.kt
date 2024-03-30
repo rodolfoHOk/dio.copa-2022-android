@@ -6,7 +6,7 @@ sealed interface MainUiAction {
 
     data class MatchesNotFound(val message: String) : MainUiAction
 
-    data object Unexpected : MainUiAction
+    data class Unexpected(val message: String) : MainUiAction
 
     data class EnableNotification(val match: MatchDomain) : MainUiAction
 

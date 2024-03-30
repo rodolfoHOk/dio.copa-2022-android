@@ -6,6 +6,7 @@ import androidx.compose.foundation.clickable
 import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Box
 import androidx.compose.foundation.layout.Column
+import androidx.compose.foundation.layout.PaddingValues
 import androidx.compose.foundation.layout.Row
 import androidx.compose.foundation.layout.Spacer
 import androidx.compose.foundation.layout.fillMaxSize
@@ -36,8 +37,8 @@ import me.dio.android.copa2022app.domain.models.TeamDomain
 typealias NotificationOnClick = (match: MatchDomain) -> Unit
 
 @Composable
-fun MainScreen(matches: List<MatchDomain>, onNotificationClick: NotificationOnClick) {
-    Box(modifier = Modifier.background(Color.Black)) {
+fun MainScreen(matches: List<MatchDomain>, onNotificationClick: NotificationOnClick, paddingValues: PaddingValues) {
+    Box(modifier = Modifier.background(Color.Black).padding(paddingValues)) {
         Column(modifier = Modifier.padding(top = 16.dp)) {
             Row(modifier = Modifier.fillMaxWidth(), horizontalArrangement = Arrangement.Center) {
                 Text(

@@ -28,23 +28,39 @@ class MainViewModel @Inject constructor(
     }
 
     private fun fetchMatches() = viewModelScope.launch {
-        getMatchesUseCase()
-            .flowOn(Dispatchers.Main)
-            .catch {
-                when (it) {
-                    is NotFoundException -> sendAction(
-                        MainUiAction.MatchesNotFound(
-                            it.message ?: "Ops! Não conseguimos encontrar as partidas :'("
-                        )
-                    )
+        try {
+            getMatchesUseCase()
+                .catch { exception ->
+                    handleException(exception)
+                }
+                .flowOn(Dispatchers.IO)
+                .collect { matches ->
+                    setState {
+                        copy(matches = matches)
+                    }
+                }
+        } catch (exception: Throwable) {
+            handleException(exception)
+        }
+    }
 
-                    is UnexpectedException -> sendAction(MainUiAction.Unexpected)
-                }
-            }.collect { matches ->
-                setState {
-                    copy(matches = matches)
-                }
-            }
+    private fun handleException(exception: Throwable) {
+        when (exception) {
+            is NotFoundException -> sendAction(
+                MainUiAction.MatchesNotFound(
+                    exception.message ?: "Ops! Não conseguimos encontrar as partidas :'("
+                )
+            )
+
+            is UnexpectedException -> sendAction(
+                MainUiAction.Unexpected(
+                    exception.message
+                        ?: "Ops! Algo ocorreu quando tentamos buscar as partidas :'("
+                )
+            )
+
+            else -> sendAction(MainUiAction.Unexpected("Ops! Algo deu errado."))
+        }
     }
 
     fun toggleNotification(match: MatchDomain) {

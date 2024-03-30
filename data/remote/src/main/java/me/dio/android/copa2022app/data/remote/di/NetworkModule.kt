@@ -15,6 +15,7 @@ import javax.inject.Singleton
 class NetworkModule {
 
     private val url = "https://digitalinnovationone.github.io/copa-2022-android/"
+//    private val url = "https://digitalinnovationone.github.io/copa-2022-android/error/" // snackbar test
 
     @Provides
     @Singleton
